@@ -15,11 +15,13 @@ public class NameListApi {
     public NameListApi() {
         // Initialize the list with your data
         people = new ArrayList<>();
-        people.add(new Person("George Bush", 25));
-        people.add(new Person("Max Derby", 36));
-        people.add(new Person("Barrack Obama", 50));
-        people.add(new Person("Winston Churchill", 95));
-        people.add(new Person("James Cage", 39));
+        people.add(new Person("Ola Nordmann", 25));
+        people.add(new Person("Kari Nordmann", 36));
+        people.add(new Person("Astrid Hansen", 50));
+        people.add(new Person("Einar Larsen", 95));
+        people.add(new Person("Ole Pettersen", 39));
+        people.add(new Person("Emil Johnsen", 39));
+        people.add(new Person("Erling Karlsen", 39));
     }
 
     @GetMapping
