@@ -20,7 +20,6 @@ public class NameListApi {
     private final List<Person> people;
 
     public NameListApi() {
-        // Initialize the list with your data
         people = new ArrayList<>();
         people.add(new Person("Ola Nordmann", 25));
         people.add(new Person("Kari Nordmann", 36));
