@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/name-list")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class NameListApi {
 
     private final List<Person> people;
@@ -27,7 +27,7 @@ public class NameListApi {
         people.add(new Person("Erling Karlsen", 39));
     }
 
-    @GetMapping(value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Person> getNameList() {
         return people;
     }
