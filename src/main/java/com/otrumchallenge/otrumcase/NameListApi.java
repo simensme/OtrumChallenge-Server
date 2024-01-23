@@ -53,6 +53,21 @@ public class NameListApi {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @PutMapping(value = "/{personId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> updatePerson(@PathVariable String personId, @RequestBody Person updatedPerson) {
+        try {
+            int index = Integer.parseInt(personId);
+            if (index >= 0 && index < people.size()) {
+                people.set(index, updatedPerson);
+                return ResponseEntity.noContent().build();
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     @DeleteMapping(value = "/{personId}")
     public ResponseEntity<Void> deletePerson(@PathVariable String personId) {
         try {
