@@ -27,7 +27,7 @@ public class NameListApi {
         people.add(new Person("Erling Karlsen", 39));
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Person> getNameList() {
         return people;
     }
