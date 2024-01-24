@@ -32,21 +32,6 @@ public class NameListApi {
         return people;
     }
 
-    @GetMapping(value = "/{personId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Person> getNameListEl(@PathVariable String personId) {
-        try {
-            int index = Integer.parseInt(personId);
-            if (index >= 0 && index < people.size()) {
-                Person person = people.get(index);
-                return ResponseEntity.ok().body(person);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
-        } catch (NumberFormatException e) {
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> addPerson(@RequestBody Person newPerson) {
         people.add(newPerson);
